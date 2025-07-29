@@ -34,7 +34,7 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
                     redirectUrl = "/profesor/dashboard";
                     break;
                 case "ROLE_ESTUDIANTE":
-                    redirectUrl = "/estudiante/cursos";
+                    redirectUrl = "/estudiante/mis-cursos";
                     break;
                 default:
                     redirectUrl = "/";

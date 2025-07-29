@@ -8,4 +8,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CursoEstudianteDao extends JpaRepository<CursoEstudiante, Long> {
     List<CursoEstudiante> findByEstudiante(Usuario estudiante);
+    boolean existsByCursoIdAndEstudiante(Long cursoId, Usuario estudiante);
+
 }

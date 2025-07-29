@@ -13,7 +13,7 @@
                 margin-left: 20px;
             }
         </style>
-        <script>
+        <script> 
             function agregarModulo() {
                 const modulosContainer = document.getElementById("modulosContainer");
 
@@ -25,6 +25,8 @@
                 moduloDiv.innerHTML = `
                     <label>Nombre del Módulo:</label>
                     <input type="text" name="modulos[${index}].nombre" required><br>
+                    <label>Semana del curso:</label>
+                    <input type="number" name="modulos[${index}].semanas" min="1" required><br>
                     <div class="clasesContainer" id="clases-${index}"></div>
                     <button type="button" onclick="agregarClase(${index})">Agregar Clase</button>
                     <button type="button" onclick="eliminarElemento(this)">Eliminar Módulo</button>
@@ -66,6 +68,9 @@
 
             <label>Descripción:</label>
             <textarea th:field="*{descripcion}" required></textarea><br>
+            
+            <label>Cantidad de semanas</label>
+            <input type="number" th:field='*{semanas}' min="1" required><br>
 
             <h3>Módulos</h3>
             <div id="modulosContainer"></div>
