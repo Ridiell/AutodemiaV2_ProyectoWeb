@@ -9,6 +9,7 @@ import com.autodemia.dao.CursoEstudianteDao;
 import com.autodemia.domain.Curso;
 import com.autodemia.domain.CursoEstudiante;
 import com.autodemia.domain.Usuario;
+import com.autodemia.repository.CursoEstudianteRepository;
 import com.autodemia.service.CursoEstudianteService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,9 @@ public class CursoEstudianteServiceImpl implements CursoEstudianteService {
     @Autowired
     private CursoDao cursoDao;
 
+    @Autowired
+    private CursoEstudianteRepository CursoEstudianteRepository;
+
     @Override
     public List<CursoEstudiante> findByEstudiante(Usuario estudiante) {
         return cursoEstudianteDao.findByEstudiante(estudiante);
@@ -36,9 +40,9 @@ public class CursoEstudianteServiceImpl implements CursoEstudianteService {
         ce.setEstudiante(estudiante);
         cursoEstudianteDao.save(ce);
     }
-    
+
     @Override
-    public boolean yaInscritoEnCurso(Long cursoId, Usuario estudiante) {
-        return cursoEstudianteDao.existsByCursoIdAndEstudiante(cursoId, estudiante);
+    public void eliminarPorId(Long id) {
+        CursoEstudianteRepository.deleteById(id);
     }
 }
