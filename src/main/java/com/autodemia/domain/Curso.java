@@ -1,4 +1,3 @@
-
 package com.autodemia.domain;
 
 import jakarta.persistence.CascadeType;
@@ -11,19 +10,23 @@ import jakarta.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 import com.autodemia.domain.Usuario;
+import jakarta.persistence.Column;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="cursos")
+@Table(name = "cursos")
 public class Curso {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nombre;
     private String descripcion;
-    private int semanas;
+    
+    @Column(name = "semanas")
+    private Integer semanas;
 
     @ManyToOne
     @JoinColumn(name = "profesor_id")
@@ -36,16 +39,16 @@ public class Curso {
         return id;
     }
 
-    public int getSemanas() {
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Integer getSemanas() {
         return semanas;
     }
 
-    public void setSemanas(int semanas) {
+    public void setSemanas(Integer semanas) {
         this.semanas = semanas;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getNombre() {
@@ -79,6 +82,5 @@ public class Curso {
     public void setModulos(List<Modulo> modulos) {
         this.modulos = modulos;
     }
-    
-    
+
 }
