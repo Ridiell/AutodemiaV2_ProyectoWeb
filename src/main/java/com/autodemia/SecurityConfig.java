@@ -30,6 +30,7 @@ public class SecurityConfig {
         return http
             .csrf().disable()
             .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/registro", "/registro/**").permitAll()
                 .requestMatchers(new AntPathRequestMatcher("/admin/**")).hasRole("ADMIN")
                 .requestMatchers(new AntPathRequestMatcher("/profesor/**")).hasRole("PROFESOR")
                 .anyRequest().permitAll()

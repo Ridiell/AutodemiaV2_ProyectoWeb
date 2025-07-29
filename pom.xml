@@ -27,6 +27,7 @@
         <url/>
     </scm>
     <properties>
+        <start-class>com.autodemia.AutodemiaApplication</start-class>
         <java.version>17</java.version>
     </properties>
     <dependencies>
