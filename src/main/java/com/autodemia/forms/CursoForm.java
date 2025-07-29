@@ -7,6 +7,7 @@ public class CursoForm {
     private String nombre;
     private String descripcion;
     private List<ModuloForm> modulos;
+    private int semanas;
 
     // Getters y setters
 
@@ -33,4 +34,7 @@ public class CursoForm {
     public void setModulos(List<ModuloForm> modulos) {
         this.modulos = modulos;
     }
+    
+    public int getSemanas() { return semanas; }
+    public void setSemanas(int semanas) { this.semanas = semanas; }
 }

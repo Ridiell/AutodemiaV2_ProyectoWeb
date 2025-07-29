@@ -36,4 +36,9 @@ public class CursoEstudianteServiceImpl implements CursoEstudianteService {
         ce.setEstudiante(estudiante);
         cursoEstudianteDao.save(ce);
     }
+    
+    @Override
+    public boolean yaInscritoEnCurso(Long cursoId, Usuario estudiante) {
+        return cursoEstudianteDao.existsByCursoIdAndEstudiante(cursoId, estudiante);
+    }
 }

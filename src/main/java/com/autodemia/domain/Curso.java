@@ -23,6 +23,7 @@ public class Curso {
 
     private String nombre;
     private String descripcion;
+    private int semanas;
 
     @ManyToOne
     @JoinColumn(name = "profesor_id")
@@ -33,6 +34,14 @@ public class Curso {
 
     public Long getId() {
         return id;
+    }
+
+    public int getSemanas() {
+        return semanas;
+    }
+
+    public void setSemanas(int semanas) {
+        this.semanas = semanas;
     }
 
     public void setId(Long id) {

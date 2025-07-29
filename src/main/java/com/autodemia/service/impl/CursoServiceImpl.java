@@ -40,6 +40,7 @@ public class CursoServiceImpl implements CursoService {
         curso.setNombre(cursoForm.getNombre());
         curso.setDescripcion(cursoForm.getDescripcion());
         curso.setProfesor(profesor);
+        curso.setSemanas(cursoForm.getSemanas());
 
         cursoRepo.save(curso);
 
