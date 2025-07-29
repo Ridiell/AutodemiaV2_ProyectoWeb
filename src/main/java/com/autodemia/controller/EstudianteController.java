@@ -57,4 +57,10 @@ public class EstudianteController {
         model.addAttribute("cursosInscritos", cursosInscritos);
         return "estudiante/mis_cursos"; // Vista nueva
     }
+
+    @PostMapping("/eliminar-inscripcion/{id}")
+    public String eliminarInscripcion(@PathVariable Long id) {
+        cursoEstudianteService.eliminarPorId(id);
+        return "redirect:/estudiante/mis-cursos?eliminado";
+    }
 }

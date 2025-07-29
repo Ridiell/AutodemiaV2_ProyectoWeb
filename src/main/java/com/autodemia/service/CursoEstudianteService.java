@@ -11,4 +11,5 @@ import java.util.List;
 public interface CursoEstudianteService {
     List<CursoEstudiante> findByEstudiante(Usuario estudiante);
     void inscribirEstudianteEnCurso(Long cursoId, Usuario estudiante);
+    void eliminarPorId(Long id);
 }
